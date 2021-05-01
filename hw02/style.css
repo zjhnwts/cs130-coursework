@@ -1,5 +1,3 @@
-
-
 body {
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     color: #fff;
@@ -202,6 +200,7 @@ nav > .selected {
 .artist-card {
     width: 20%; 
     padding: 10px;
+    overflow: auto;
 }
 
 .artist-card > div {
@@ -209,9 +208,6 @@ nav > .selected {
     border-radius: 15px;
     background-size: cover;
     background-color: #222;
-}
-
-.artist-card > div > div {
 }
 
 .image-div {
@@ -248,6 +244,7 @@ span.play-button {
 
 .caption {
     color: #999; 
+    white-space: nowrap;
 }
 
 a:hover {
@@ -277,7 +274,7 @@ a:hover {
 
 /* Your Code Here */
 
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1100px) {
     .artist-card {
         width: 33.33%; 
     }
