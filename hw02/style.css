@@ -129,7 +129,7 @@ header {
     align-items: center;
     justify-content: flex-end;
     font-family: 'Noto Sans KR', sans-serif;
-    background-color: black;
+    background-color: #111;
 }
 
 
@@ -142,7 +142,7 @@ header > div > a {
     border: solid 1px lightgray;
     border-radius: 25px;
     font-size: 13px;
-    background-color: black;
+    background-color: #111;
 }
 
 #profile {
