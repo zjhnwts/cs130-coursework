@@ -109,7 +109,7 @@ for (const track of tracks) {
 // #audio-source element's "src" attribute with the correct 
 // sound sample and then invoke the audio.load() and audio.play() 
 // logic.
-const playSong = (ev) => {
+const playSong = ev => {
 
     const idx = Number(ev.currentTarget.dataset.index)
     document.querySelector('#audio-source').src = tracks[idx].preview_url; 
