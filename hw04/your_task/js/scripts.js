@@ -38,6 +38,9 @@ const getArtist = (term) => {
             // do something the first artist 
             elem.innerHTML += getArtistHTML(firstArtist); 
         }
+        // if (data.length == 0) {
+        //     <h3>No artist is founded. </h3>
+        // }
     });
 };
 
