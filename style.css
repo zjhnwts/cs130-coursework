@@ -25,6 +25,10 @@ header {
    padding-bottom: 40px;
 }
 
+#projects {
+   background-color: #4f759b;
+}
+
 #tutorials {
    background-color: #e3b5c6;
 }
