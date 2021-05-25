@@ -16,36 +16,108 @@ const search = (ev) => {
     }
 }
 
+const playTrack = (ev) => {
+    console.log(ev.currentTarget); 
+    const elem = ev.currentTarget;
+
+    const previewURL = elem.getAttribute('data-preview-track');
+    console.log(previewURL);
+    if (previewURL) {
+        audioPlayer.setAudioFile(previewURL);
+        audioPlayer.play();
+    }
+
+    else {
+        console.log('there is no preview available for this track.')
+    } 
+    document.querySelector('footer .track-item').innerHTML = elem.innerHTML; 
+}
+
 const getTracks = (term) => {
     let url = `https://www.apitutor.org/spotify/simple/v1/search?type=track&q=${term}&limit=5`; 
-    document.querySelector('#tracks').innerHTML = ''; 
+    document.querySelector('#tracks').innerHTML = ""; 
     fetch(url)
         .then(response => response.json())
         .then(data => {
             for (const track of data) {
-                const template = `
-                <section class= "track-item preview" data-preview-track="${track.preview_url}">
-                    <img src="${track.album.image_url}">
-                    <i class="fas play-track fa-play" aria-hidden="true"></i>
-                    <div class="label">
-                        <h3>${track.name}</h3>
-                        <p>
-                            ${track.artist.name}
-                        </p>
-                    </div>
-            </section>`; 
-                document.querySelector('#tracks').innerHTML += template; 
-                console.log(track); 
 
+                // if (!track.preview_url) {
+                //     const template = `
+                //     <section class= "track-item preview" data-preview-track="${track.preview_url}" onclick = "playTrack(event);">
+                //         <img src="${track.album.image_url}">
+                //         <i class="fas play-track fa-play" aria-hidden="true"></i>
+                //         <div class="label">
+                //             <h3>${track.name}</h3>
+                //             <p>
+                //                 ${track.artist.name} (No preview available)
+                //             </p>
+                //         </div>
+                //     </section>`; 
+                // } else {
+
+                    let template = ""; 
+                    if (!track.preview_url) {
+                        template = `
+                        <section class= "track-item preview" data-preview-track="${track.preview_url}" onclick = "playTrack(event);">
+                            <img src="${track.album.image_url}">
+                            <div class="label">
+                                <h3>${track.name}</h3>
+                                <p>
+                                    ${track.artist.name} - No Preview Available 
+                                </p>
+                            </div>
+                        </section>`; 
+                    }
+                    
+                    else {
+                        template = `
+                        <section class= "track-item preview" data-preview-track="${track.preview_url}" onclick = "playTrack(event);">
+                            <img src="${track.album.image_url}">
+                            <i class="fas play-track fa-play" aria-hidden="true"></i>
+                            <div class="label">
+                                <h3>${track.name}</h3>
+                                <p>
+                                    ${track.artist.name} 
+                                </p>
+                            </div>
+                        </section>`; 
+                    }
+                document.querySelector('#tracks').innerHTML += template; 
+                console.log(track);  
+            }
+            if (data.length == 0) {
+                document.querySelector('#tracks').innerHTML = "No tracks found that match your search criteria.";
             }
         })
 };
 
 const getAlbums = (term) => {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+    let url = `https://www.apitutor.org/spotify/simple/v1/search?type=album&q=${term}&limit=5`; 
+    document.querySelector('#albums').innerHTML = ""; 
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+                for (const album of data) {
+                    const template = 
+                    `<section class= "album-card" id="${album.id}">
+                        <div>
+                            <img src="${album.image_url}">
+                            <h3>${album.name}</h3>
+                            <div class="footer">
+                                <a href="${album.spotify_url}" target="_blank">
+                                    view on spotify
+                                </a>
+                            </div>
+                        </div>
+                    </section>`;
+                document.querySelector('#albums').innerHTML += template; 
+                console.log(album); 
+                }
+                if (data.length == 0) {
+                    document.querySelector('#albums').innerHTML = "No albums were returned.";
+                }
+        })
 };
 
 const getArtist = (term) => {
@@ -59,15 +131,15 @@ const getArtist = (term) => {
             // do something the first artist 
             elem.innerHTML += getArtistHTML(firstArtist); 
         }
-        // if (data.length == 0) {
-        //     <h3>No artist is founded. </h3>
-        // }
+        else {
+            document.querySelector('#artist').innerHTML = "No artist has been returned. ";
+        }
     });
 };
 
 const getArtistHTML = (data) => {
     if (!data.image_url) {
-        data.image_url = 'https://www.pngkit.com/png/full/943-9439413_blue-butterfly-free-png-image-dark-blue-to.png'
+        data.image_url = 'https://www.pngkit.com/png/full/943-9439413_blue-butterfly-free-png-image-dark-blue-to.png'; 
     }
     return  `<section class= "artist-card" id="${data.id}">
             <div>
