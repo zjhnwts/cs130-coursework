@@ -2361,6 +2361,11 @@ input, select, textarea {
 		}
 
 /* Image */
+		
+		.wrapingimage  {  
+		float: left;   
+		margin: 10px 15px 10px -10px;   
+		}  
 
 	.image {
 		border-radius: 8px;
@@ -2467,7 +2472,7 @@ input, select, textarea {
 
 		dl.alt dt {
 			display: block;
-			width: 10em;
+			width: 9em;
 			margin: 0;
 			clear: left;
 			float: left;
@@ -3407,6 +3412,12 @@ input, select, textarea {
 		color: #636363;
 		border-radius: 0.25em;
 	}
+
+	.main h2{
+		font-weight: bold;
+	}
+	
+
 
 		#main input, #main select, #main textarea {
 			color: #636363;
