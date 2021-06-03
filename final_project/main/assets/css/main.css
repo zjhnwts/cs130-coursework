@@ -99,6 +99,7 @@ input, select, textarea {
 	}
 
 	body {
+		/* background-image: url('Logo & pics/背景.jpg'); */
 		background-color: #935d8c;
 		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
 		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
@@ -2634,6 +2635,13 @@ input, select, textarea {
 			ul.icons li:last-child {
 				padding-right: 0 !important;
 			}
+	.greencolor {
+		color:#4A7856;
+	}
+
+	.yellowcolor {
+		color: #F5CB5C; 
+	}
 
 /* Section/Article */
 
@@ -3146,6 +3154,13 @@ input, select, textarea {
 		text-align: center;
 	}
 
+	/* #header {
+		background-image: url('Logo & pics/背景.jpg');
+		background-position:center;
+		width:700px;
+		height:400px;
+	} */
+
 		#header h1 {
 			margin: 0 0 0.25em 0;
 		}
@@ -3157,7 +3172,112 @@ input, select, textarea {
 
 		#header.alt {
 			padding: 7em 5em 4em 5em ;
+			/* background-image: url('Logo & pics/背景.jpg');
+			background-image: initial; */
+			/* border: solid 1px #000;
+			padding-top: 200px;
+			padding-bottom: 200px;
+			width: 100%;
+			background-attachment: fixed;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: top center; */
 		}
+
+		* {box-sizing:border-box}
+
+		.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+		  }
+		  
+		  /* Hide the images by default */
+		  .begin {
+			display: none;
+		  }
+
+		  
+		  /* Next & previous buttons */
+		  .prev, .next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			margin-top: -22px;
+			padding: 16px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		  }
+		  
+		  /* Position the "next button" to the right */
+		  .next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		  }
+		  
+		  /* On hover, add a black background color with a little bit see-through */
+		  .prev:hover, .next:hover {
+			background-color: rgba(0,0,0,0.8);
+		  }
+		  
+		  /* Caption text */
+		  .text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+		  }
+		  
+		  /* Number text (1/3 etc) */
+		  .numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+		  }
+		  
+		  /* The dots/bullets/indicators */
+		  .dot {
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		  }
+		  
+		  .active, .dot:hover {
+			background-color: #717171;
+		  }
+		  
+		  /* Fading animation */
+		  .fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		  }
+		  
+		  @-webkit-keyframes fade {
+			from {opacity: .4}
+			to {opacity: 1}
+		  }
+		  
+		  @keyframes fade {
+			from {opacity: .4}
+			to {opacity: 1}
+		  }
 
 			#header.alt h1 {
 				font-size: 3.25em;
@@ -3168,10 +3288,10 @@ input, select, textarea {
 				-webkit-transition: opacity 3s ease;
 				-ms-transition: opacity 3s ease;
 				transition: opacity 3s ease;
-				-moz-transition-delay: 0.5s;
+				/* -moz-transition-delay: 0.5s;
 				-webkit-transition-delay: 0.5s;
 				-ms-transition-delay: 0.5s;
-				transition-delay: 0.5s;
+				transition-delay: 0.5s; */
 				opacity: 1;
 			}
 
