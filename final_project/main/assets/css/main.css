@@ -3987,14 +3987,16 @@ input, select, textarea {
 		.wrapingimage {
 			position: relative;
 			width: 20%;
-			margin: 10px 15px 10px -10px;
-		  }
+			margin: 10px 15px 10px -15px;
+			min-width: 150px;
+		}
 		  
-		  .aimage {
+		.aimage {
 			display: block;
 			width: 100%;
 			height: auto;
-		  }
+			min-width: 150px;
+		}
 		  
 		  .aoverlay {
 			position: absolute;
@@ -4023,3 +4025,40 @@ input, select, textarea {
 			transform: translate(-50%, -50%);
 			-ms-transform: translate(-50%, -50%);
 		  }
+
+		@media screen and (max-width: 1280px) {
+
+			.wrapingimage {
+				width: 20%;
+				margin: 10px 25px 10px -15px;
+			}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.wrapingimage {
+				width: 20%;
+				margin: 12px 15px 10px -15px;
+			}
+
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			.wrapingimage {
+				width: 20%;
+				margin: 13px 15px 10px -15px;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			.wrapingimage {
+				width: 25%;
+				margin: 13px 15px 10px -15px;
+			}
+
+		}
