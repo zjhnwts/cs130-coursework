@@ -2365,7 +2365,7 @@ input, select, textarea {
 		
 		.wrapingimage  {  
 		float: left;   
-		margin: 10px 15px 10px -10px;   
+		/* margin: 10px 15px 10px -10px;    */
 		}  
 
 	.image {
@@ -3983,3 +3983,43 @@ input, select, textarea {
 			}
 
 		}
+
+		.wrapingimage {
+			position: relative;
+			width: 20%;
+			margin: 10px 15px 10px -10px;
+		  }
+		  
+		  .aimage {
+			display: block;
+			width: 100%;
+			height: auto;
+		  }
+		  
+		  .aoverlay {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #008CBA;
+			overflow: hidden;
+			width: 100%;
+			height: 0;
+			transition: .5s ease;
+		  }
+		  
+		  .wrapingimage:hover .aoverlay {
+			height: 100%;
+		  }
+		  
+		  .atext {
+			white-space: nowrap; 
+			color: white;
+			font-size: 20px;
+			position: absolute;
+			overflow: hidden;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			-ms-transform: translate(-50%, -50%);
+		  }
