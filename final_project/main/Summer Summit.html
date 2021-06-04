@@ -40,7 +40,17 @@
 
 						<!-- Content -->
 							<section id="content" class="main">
-								<span class="image main"><img src="Logo & pics/活动照片/IMG_6253.jpg" alt="" /></span>
+								<div class="bgimg">
+									<span class="image main"><img src="images/lab.webp"/></span>
+								<div class="middle">
+								<h1 style="color: white;">COMING SOON!</h1>
+								<hr />
+								<h2 class="timer" style="color: white;"></h2>
+								</div>
+								<div class="bottomleft">
+								<p>AcaLab Incubating...</p>
+								</div>
+								</div>
 								<h2>Student's Application Info</h2>
 									<p>
 									The Acalab Interdisciplinary Science Summit is not for profit. Fees collected will be used for inviting tutors and professors, conference operations, room and board for students and team members, lab expenses and other materials.
@@ -68,11 +78,12 @@
 									activity, participants will systematically understand the background knowledge of the subject, 
 									design and complete a research topic of interest, 
 									and develop the ability of critical academic thinking and independent research.</p>
-								
+									
 							</section>
-							
-					</div>
 
+														
+						</div>
+						
 				<!-- Footer -->
 				<footer id="footer">
 					<section>
@@ -109,6 +120,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script>
+				var countDownDate = new Date("June 30, 2021 23:59:59").getTime();
+				var timeClear = setInterval(function() {
+				   var now = new Date().getTime();
+				   var timeLeft = countDownDate - now;
+				   var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+				   var hours = Math.floor(
+					  (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				   );
+				   var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+				   var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+				   document.querySelector(".timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+				   if (timeLeft < 0) {
+					  clearInterval(timeClear);
+					  document.querySelector(".timer").innerHTML = "Timer Finished";
+				   }
+				}, 1000);
+			 </script>
 	</body>
 </html>

@@ -3193,7 +3193,7 @@ input, select, textarea {
 		  }
 		  
 		  /* Hide the images by default */
-		  .begin {
+		  .mySlides {
 			display: none;
 		  }
 
@@ -3215,8 +3215,12 @@ input, select, textarea {
 		  }
 		  
 		  /* Position the "next button" to the right */
+		  .prev {
+			left: -5%;
+			border-radius: 3px 0 0 3px;
+		  }
 		  .next {
-			right: 0;
+			right: -5%;
 			border-radius: 3px 0 0 3px;
 		  }
 		  
@@ -3242,7 +3246,7 @@ input, select, textarea {
 			font-size: 12px;
 			padding: 8px 12px;
 			position: absolute;
-			top: 0;
+			top: -15%;
 		  }
 		  
 		  /* The dots/bullets/indicators */
@@ -4042,7 +4046,6 @@ input, select, textarea {
 				margin: 12px 15px 10px -15px;
 			}
 
-
 		}
 
 		@media screen and (max-width: 736px) {
@@ -4061,4 +4064,93 @@ input, select, textarea {
 				margin: 13px 15px 10px -15px;
 			}
 
+		}
+	
+		.bgimg {
+			/* Center the background image */
+			background-position: bottom;
+			/* Scale and zoom in the image */
+			background-size: cover;
+			/* Add position: relative to enable absolutely positioned elements inside the image (place text) */
+			position: relative;
+			/* Add a white text color to all elements inside the .bgimg container */
+			color: white;
+			/* Add a font */
+			font-family: "Courier New", Courier, monospace;
+			/* Set the font-size to 25 pixels */
+			font-size: 23px;
+		}
+
+		.timer {
+			text-align: center;
+			font-size: 27px;
+			margin-top: 0px;
+		}
+		  
+		/* Position text in the bottom-left corner */
+		.bottomleft {
+			position: absolute;
+			bottom: -5%;
+			left: 3%;
+			font-size: 20px;
+		}
+		  
+		/* Position text in the middle */
+		.middle {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+		}
+
+		hr {
+			margin: auto;
+			width: 40%;
+		}
+		
+		@media screen and (max-width: 890px) {
+
+			.bgimg {
+				font-size: 20px;
+			}
+			.timer {
+				font-size: 21px;
+
+			}
+			.bottomleft {
+				position: absolute;
+				bottom: -5%;
+				left: 3%;
+				font-size: 17px;
+			}
+		}
+
+		@media screen and (max-width: 750px) {
+
+			.bgimg {
+				font-size: 16px;
+			}
+			.timer {
+				font-size: 19px;
+
+			}
+			.bottomleft {
+				position: absolute;
+				bottom: -5%;
+				left: 3%;
+			}
+		}
+		@media screen and (max-width: 600px) {
+			.bottomleft {
+				position: absolute;
+				bottom: -5%;
+				left: 3%;
+				font-size: 13px;
+			}
+		}
+		@media screen and (max-width: 550px) {
+			.bottomleft {
+				display: none;
+			}
 		}
