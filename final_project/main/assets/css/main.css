@@ -3494,7 +3494,8 @@ input, select, textarea {
 						background-color: #ffffff;
 						box-shadow: none;
 					}
-
+					
+					
 		#nav.alt {
 			position: fixed;
 			top: 0;
@@ -3512,19 +3513,22 @@ input, select, textarea {
 				#nav.alt ul li a {
 					font-size: 0.9em;
 				}
+				
 
 		@media screen and (max-width: 736px) {
 
-			#nav {
+			/* #nav {
 				display: none;
 			}
 
 				#nav + #main {
 					padding-top: 0;
+				} */
+				#nav {
+					position: absolute;
 				}
-
 		}
-
+		
 /* Main */
 	.list {
 		padding: 5em 5em 3em 5em ;
